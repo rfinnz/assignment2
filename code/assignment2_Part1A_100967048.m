@@ -1,3 +1,8 @@
+
+%Assignment 2 Part 1 A%
+%ELEC 4700 RICHARD FINNEY 100967048%
+
+%initiailizing the dimensions of our matrices, ensuring ny is 3/2 times nx
 nx = 50;
 ny = (3/2)*50;
 
@@ -9,6 +14,9 @@ ny = (3/2)*50;
 
 G = sparse(nx*ny,nx*ny);
 Op = zeros(nx*ny,1);
+
+%filling in the G matrix's bulk nodes and BC's using a loop, similar
+%to what we did in PA-5 using the Finite Difference method
 for x = 1:nx
     for y = 1:ny
         
@@ -71,6 +79,9 @@ end
 
 figure(1)
 surf(sol)
-title("Voltage in one dimension")
+title("Voltage plot using FD in one dimension")
+xlabel("X position")
+ylabel("Y position")
+zlabel("Voltage")
 view(-130,30)
-
+%the end
